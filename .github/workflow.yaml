@@ -33,13 +33,13 @@ jobs:
 
     - name: Modify index.html
       run: |
-        sed -i "s/{{API_URL}}/${{ steps.get_api_url.outputs.url }}/g" ../my-webapp-repo/index.html
+        sed -i "s/{{API_URL}}/${{ steps.get_api_url.outputs.url }}/g" ../SimpleWebApp/index.html
 
     - name: Commit changes
       run: |
-        cd ../my-webapp-repo
+        cd ../SimpleWebApp
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add index.html
-        git commit -m "Update API URL"
+        git commit -m "Run App"
         git push
